@@ -1,0 +1,30 @@
+import nest_asyncio
+from fastapi import FastAPI
+
+from api.config import settings, logger
+from api.routers import home
+from api.routers import metadata
+from api.routers import sample_router
+from api.utils.modify_request_validator import modify_request_validator
+
+
+nest_asyncio.apply()
+
+
+app = FastAPI(
+    title = "API-Template-Python",
+    version = "1.0.0",
+    description = "A Python based API Template built on FastAPI framework for ML and AI applications.",
+    contact = {
+        "name": "Animesh Bala Ani",
+        "email": "animesh.ani@live.com",
+        },
+    root_path = settings.ROOT_PATH,
+    )
+
+
+app.include_router(home.router)
+app.include_router(metadata.router)
+app.include_router(sample_router.router)
+
+modify_request_validator(app, logger)

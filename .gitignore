@@ -1,5 +1,6 @@
 .env
-__pycache__/*
-build/*
-dist/*
+*__pycache__*
+build/
+dist/
 .coverage
+*.log

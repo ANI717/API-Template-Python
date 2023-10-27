@@ -1,8 +1,11 @@
 fastapi
 httpx
+nest-asyncio
+pydantic-settings
 pytest
 pytest-asyncio
 pytest-cov
 pytest-env
 pytest-mock
+python-dotenv
 uvicorn
