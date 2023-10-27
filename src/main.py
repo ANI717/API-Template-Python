@@ -4,6 +4,7 @@ from fastapi import FastAPI
 from api.config import settings, logger
 from api.events import startup, shutdown
 from api.middlewares import calculate_process_time
+from api.middlewares import generate_request_id
 from api.routers import home
 from api.routers import metadata
 from api.routers import sample_router
@@ -29,7 +30,8 @@ app = FastAPI(
 startup.include_event(app, logger)
 shutdown.include_event(app, logger)
 
-calculate_process_time.calculate_process_time_middleware(app, logger)
+calculate_process_time.calculate_process_time_middleware(app)
+generate_request_id.generate_request_id_middleware(app)
 
 app.include_router(home.router)
 app.include_router(metadata.router)

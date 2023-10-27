@@ -9,6 +9,9 @@ load_dotenv()
 load_dotenv(find_dotenv("../.env"))
 
 
+REQUEST_ID = None
+
+
 class Settings(BaseSettings):
     ENV : str = "dev"
     ROOT_PATH : Union[str, None] = None
