@@ -2,6 +2,7 @@ import nest_asyncio
 from fastapi import FastAPI
 
 from api.config import settings, logger
+from api.events import startup, shutdown
 from api.routers import home
 from api.routers import metadata
 from api.routers import sample_router
@@ -23,6 +24,9 @@ app = FastAPI(
     root_path = settings.ROOT_PATH,
     )
 
+
+startup.include_event(app, logger)
+shutdown.include_event(app, logger)
 
 app.include_router(home.router)
 app.include_router(metadata.router)
