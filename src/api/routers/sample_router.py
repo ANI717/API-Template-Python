@@ -22,5 +22,4 @@ async def sample_router(inputs: input_schema.InputKeys) -> output_schema.OutputK
                              status.HTTP_500_INTERNAL_SERVER_ERROR,
                              "failed generating output")
     
-    logger.error("Success")
     return outputs
