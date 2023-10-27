@@ -6,6 +6,7 @@ from api.routers import home
 from api.routers import metadata
 from api.routers import sample_router
 from api.utils.modify_request_validator import modify_request_validator
+from api.utils.modify_response_validator import modify_response_validator
 
 
 nest_asyncio.apply()
@@ -28,3 +29,4 @@ app.include_router(metadata.router)
 app.include_router(sample_router.router)
 
 modify_request_validator(app, logger)
+modify_response_validator(app, logger)
