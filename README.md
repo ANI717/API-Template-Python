@@ -8,3 +8,15 @@ conda activate api
 cd API-Template-Python
 pip install -r .\requirements.txt
 ```
+
+## Run API
+```
+cd API-Template-Python\src
+uvicorn main:app
+```
+
+## Test & Coverage
+```
+cd API-Template-Python
+pytest --cov=src
+```
