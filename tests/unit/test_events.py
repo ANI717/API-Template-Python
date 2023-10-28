@@ -4,7 +4,6 @@ import logging
 from dotenv import load_dotenv
 from fastapi.testclient import TestClient
 from .create_dummy_api import create_dummy_api
-from .pytest_fixtures import test_client_fixture
 
 
 sys.path.append("src")
@@ -12,13 +11,13 @@ load_dotenv()
 
 
 @pytest.mark.events
-def test_startup_event(test_client_fixture: TestClient):
+def test_startup_event():
     
     from api.events import startup
     
     app = create_dummy_api()
     startup.include_event(app, logging)
-    client = test_client_fixture(app)
+    client = TestClient(app)
 
     response = client.get("/")
 
@@ -26,13 +25,13 @@ def test_startup_event(test_client_fixture: TestClient):
 
 
 @pytest.mark.events
-def test_shutdown_event(test_client_fixture: TestClient):
+def test_shutdown_event():
     
     from api.events import shutdown
     
     app = create_dummy_api()
     shutdown.include_event(app, logging)
-    client = test_client_fixture(app)
+    client = TestClient(app)
 
     response = client.get("/")
 
