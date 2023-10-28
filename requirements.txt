@@ -1,6 +1,5 @@
 fastapi
 httpx
-nest-asyncio
 pydantic-settings
 pytest
 pytest-asyncio

@@ -1,4 +1,3 @@
-import nest_asyncio
 from fastapi import FastAPI
 
 from api.config import settings, logger
@@ -10,9 +9,6 @@ from api.routers import metadata
 from api.routers import sample_router
 from api.utils.modify_request_validator import modify_request_validator
 from api.utils.modify_response_validator import modify_response_validator
-
-
-nest_asyncio.apply()
 
 
 app = FastAPI(
