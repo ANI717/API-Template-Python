@@ -20,3 +20,8 @@ uvicorn main:app
 cd API-Template-Python
 pytest --cov=src
 ```
+
+## Terminate All Python Processses
+```
+taskkill /f /im python.exe
+```
