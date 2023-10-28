@@ -1,7 +1,7 @@
 import logging
 from api.loggers.handlers.get_file_handler import get_file_handler
 from api.loggers.handlers.get_console_handler import get_console_handler
-from api.middlewares.generate_request_id import Request_ID
+from api.middlewares.request_id_middleware import Request_ID
 
 
 class SystemLogFilter(logging.Filter):

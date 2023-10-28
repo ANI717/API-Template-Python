@@ -6,10 +6,10 @@ class Request_ID():
     REQUEST_ID = None
 
 
-def generate_request_id_middleware(app):
+def request_id_middleware(app):
     
     @app.middleware("http")
-    async def add_generate_request_id(request: Request, call_next):
+    async def add_request_id(request: Request, call_next):
         
         Request_ID.REQUEST_ID = str(uuid.uuid4())
         

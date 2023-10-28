@@ -2,10 +2,10 @@ import time
 from fastapi import Request
 
 
-def calculate_process_time_middleware(app):
+def process_time_middleware(app):
     
     @app.middleware("http")
-    async def add_calculate_process_time(request: Request, call_next):
+    async def add_process_time(request: Request, call_next):
         
         start_time = time.time()
         
