@@ -4,5 +4,3 @@ def include_event(app, logger):
     async def shutdown_event():
         body = "application shutdown complete"
         logger.info(body)
-    
-    return True
