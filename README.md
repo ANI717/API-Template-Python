@@ -3,7 +3,7 @@ A Python based API Template built on FastAPI framework for ML and AI application
 
 ## Set Environment (Anaconda)
 ```
-conda create -n api python=3.11.4
+conda create -n api python=3.11.5
 conda activate api
 cd API-Template-Python
 pip install -r .\requirements.txt
