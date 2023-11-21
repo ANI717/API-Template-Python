@@ -28,7 +28,9 @@ JSON is more Lightweight and Readable than XML
 ```
 CRUD = Creat Read Update Delete
 POST, GET, PUT/PATCH, DELETE
-POST better have Content-Type in Header
+PUT updates entire resource
+Patch updates partial resource
+POST should have Content-Type in Header
 ```
 ```
 Status Codes
@@ -41,6 +43,24 @@ Status Codes
 201 = Created
 301 = Moved Permanently
 400 = Bad Request
+403 = Unauthorized
 404 = Not Found
 500 = Internal Server Error
+```
+```
+RESTful API
+Client and Server = Completely Seperate, Language Agonist
+Stateless, all requests are independent
+```
+```
+HTTPS
+Encripted data
+Ensures client is communicating with right server
+Does not hide identity of client andd server
+VPN hides identity of server
+Public key
+Private key
+Symetric key
+SSL, TLS 1.0, TLS 1.1 are depricated
+TLS 1.2 and 1.3 are in use
 ```
